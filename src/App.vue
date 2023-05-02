@@ -1,10 +1,9 @@
-
-
 <script>
 import axios from 'axios';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
+import {store} from './data/store';
 
 export default {
   name:'App',
@@ -12,6 +11,22 @@ export default {
     Header,
     Main,
     Footer
+  },
+  data(){
+    return{
+      store
+    }
+  },
+  methods:{
+    getApi(){
+      axios.get(store.apiUrl)
+        .then( result =>{
+          console.log(result.data);
+        })
+    }
+  },
+  mounted(){
+    this.getApi()
   }
 }
 </script>
