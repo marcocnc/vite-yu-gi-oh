@@ -17,14 +17,17 @@ export default {
       store
     }
   },
+
   methods:{
     getApi(){
-      axios.get(store.apiUrl)
+      axios.get(store.apiUrl + "?num=105&offset=0")
         .then( result =>{
           console.log(result.data);
+          store.gameCards = result.data.data;
         })
     }
   },
+
   mounted(){
     this.getApi()
   }
