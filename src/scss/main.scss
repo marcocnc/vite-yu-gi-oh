@@ -1,0 +1,14 @@
+@use './partials/vars' as *;
+
+@import 'bootstrap/scss/bootstrap';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: $primary_color;
+}
