@@ -23,8 +23,8 @@ export default {
       <button
       @click="nextPrev(-store.visibleCards)"
       class="btn btn-warning mx-4"
-      v-if="store.cardsOffset > 0">prev</button>
-        <button @click="nextPrev(store.visibleCards)" class="btn btn-info">next</button>
+      v-if="store.cardsOffset > 0">Prev</button>
+        <button @click="nextPrev(store.visibleCards)" class="btn btn-info">Next</button>
     </footer>
 </template>
 

@@ -1,11 +1,16 @@
 <script>
 import CardsContainer from './CardsContainer.vue';
-
+import { store } from '../data/store';
 export default {
     name:'Main',
+    data(){
+        return{
+            store
+        }
+    },
     components:{
         CardsContainer,
-    }
+    },
 }
 </script>
 
@@ -14,9 +19,10 @@ export default {
 
         <!-- Filter -->
         <div class="select-div pt-4 ms-2">
-            <select name="select" id="Select" class="mc-select">
+            <select name="select" id="Select" class="mc-select">   
 
-                <option value="1">Opzione</option>
+                <option value="1">Choose a type</option>
+                <option v-for="(typeCard, index) in store.cardsType" :key = "index" value="2"> {{typeCard}} </option>
                 
             </select>
         </div>
