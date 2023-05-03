@@ -39,6 +39,10 @@ export default {
     
                 img{
                     width: 100%; 
+                    transition: all .2s;
+                    &:hover{
+                        transform:scale(1.1);
+                    }
                 }
             }
             

@@ -29,7 +29,7 @@ export default {
             v-for="card in store.gameCards"
             :key="card.id"
             :name="card.name"
-            :archetype="card.archetype"
+            :archetype="card.archetype || card.type"
             :image="card.card_images"
             />
         </div>
@@ -44,6 +44,8 @@ export default {
 
         .pages{
             background-color: #212529;
+            margin-left: 15px;
+            margin-right: 12px;
 
             span{
                 color: $color_white;
