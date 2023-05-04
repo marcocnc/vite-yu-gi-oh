@@ -22,11 +22,13 @@ export default {
 
   methods:{
     getApi(){
+      console.warn('err');
       store.isLoading = true;
       axios.get(store.apiUrl, {
         params:{
           num: store.visibleCards,
-          offset: store.cardsOffset
+          offset: store.cardsOffset,
+          type: store.cardTypeFiltered 
         }
       })
         .then( result =>{
@@ -46,14 +48,10 @@ export default {
               store.cardsType.push(item.type);
             }
           });
-          
-          // store.cardsType = result.data.data.filter(card =>{
-          //   return !store.cardsType.includes(card.type)
-          // })
-
           console.log(store.cardsType);
         })
-      } 
+      },
+      
   },
 
   mounted(){
@@ -68,7 +66,7 @@ export default {
   <Header />
   <Loading v-if="store.isLoading" />
 
-  <Main />
+  <Main @filterType="getApi"/>
 
   <Footer @startSearch="getApi" />
   

@@ -10,7 +10,7 @@ export default {
     },
     components:{
         CardsContainer,
-    },
+    }
 }
 </script>
 
@@ -19,10 +19,10 @@ export default {
 
         <!-- Filter -->
         <div class="select-div pt-4 ms-2">
-            <select name="select" id="Select" class="mc-select">   
+            <select name="select" id="Select" class="mc-select" v-model="store.cardTypeFiltered">   
 
-                <option value="1">Choose a type</option>
-                <option v-for="(typeCard, index) in store.cardsType" :key = "index" value="2"> {{typeCard}} </option>
+                <option value="" selected>Choose a type</option>
+                <option v-for="(typeCard, index) in store.cardsType" :key = "index" :value="type" @click="$emit('filterType')"> {{typeCard}} </option>
                 
             </select>
         </div>

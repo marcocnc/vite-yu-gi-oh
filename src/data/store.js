@@ -5,9 +5,13 @@ export const store = reactive({
 
     gameCards: [],
 
-    
+    cardTypeFiltered : null,
+
     visibleCards: 10,
+
     cardsOffset: 0,
+
     cardsType : [],
+
     isLoading: true
 })
