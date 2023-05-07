@@ -5,7 +5,7 @@ export default {
     name:'Main',
     data(){
         return{
-            store
+            store,
         }
     },
     components:{
@@ -19,10 +19,10 @@ export default {
 
         <!-- Filter -->
         <div class="select-div pt-4 ms-2">
-            <select name="select" id="Select" class="mc-select" v-model="store.cardTypeFiltered">   
+            <select name="select" id="Select" class="mc-select" v-model="store.cardTypeFiltered" @change="$emit('filterType')">   
 
                 <option value="" selected>Choose a type</option>
-                <option v-for="(typeCard, index) in store.cardsType" :key = "index" :value="type" @click="$emit('filterType')"> {{typeCard}} </option>
+                <option v-for="(typeCard, index) in store.cardsType" :key = "index" :value="typeCard" @click="$emit('filterType')"> {{typeCard}} </option>
                 
             </select>
         </div>
